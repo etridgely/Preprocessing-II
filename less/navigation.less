@@ -9,14 +9,33 @@ nav {
     h1{
         margin-left: 150px;
         margin-right: 300px;
+
+        @media @mobile {
+            margin: 10px 150px;
+            }  
     }
 
     a{
         font-size: 1.6rem;
         margin: 0px 15px;
+
+        @media @mobile {
+            padding: 0 2%;
+            margin: 0 5%;
+          }
     }
 
     a:last-child {
         margin-right:200px;
+
+        @media @mobile {
+            margin-right: 0px;
+            }  
       }
+
+    @media @mobile {
+    //display: flex;
+    flex-wrap: wrap;
+    width:100%
+    }  
 }
