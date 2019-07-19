@@ -1,4 +1,12 @@
 .home {
+  header {
+    border-bottom: 2px dashed @navigation-border;
+    padding-bottom: 15px;
+
+      h2 {
+        margin-top: 15px;
+      }
+  }
 
   .content-section {
     margin: 30px 0;
@@ -6,11 +14,21 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
-   
-    
+    @media @mobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;  
+    }
+
     .text-content {
       width: 48%;
       padding-right: 1%;
+
+      @media @mobile {
+      width: 100%;
+      padding: 0%
+      }
     }
 
     .img-content {
@@ -20,12 +38,21 @@
       img {
         border-radius: 10px;
       }
+
+      @media @mobile {
+        width: 100%;
+        padding: 2% 0;
+        }
     }
   }
 
   .inverse-content {
     padding-bottom: 30px;
     border-bottom: 2px dashed @navigation-border;
+
+    @media @mobile {
+      flex-direction: column-reverse;
+    }
 
     .text-content {
       padding-left: 1%;
@@ -39,23 +66,44 @@
   }
 
   .content-destination {
-    width: 75%;
-    margin: 0 auto 30px;
+      width: 75%;
+      margin: 0 auto 30px;
 
-    img {
-      border-radius: 10px;
-    }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+
+      img {
+        border-radius: 10px;
+
+        @media (max-width: 500px) {
+          padding: 0% 2%;
+          border-radius: 20px;
+        }
+      }  
   }
 
   .content-pick {
-    padding-top: 30px;
-    border-top: 2px dashed @navigation-border;
-    display: flex;
-    justify-content: space-between;
+      padding-top: 30px;
+      border-top: 2px dashed @navigation-border;
+      display: flex;
+      justify-content: space-between;
 
-    .destination {
-      width: 30%;
-      margin-bottom: 30px;
+      @media @mobile {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+      }
+
+      .destination {
+        width: 30%;
+        margin-bottom: 30px;
+
+        @media @mobile {
+          width:60%;
+        }
+      }
     }
-  }
-}// home
+}
+// home
